@@ -161,7 +161,6 @@ def list_methods():
     logger.info(f"Short list = {lst}")
 
     # append 10 to the end of the list
-    lst = [1, 2, 3, 4, 5, 7, 8 ,9]
     lst.append(10)
     logger.info(f"Appending 10 to list gives {lst}")
 
@@ -173,7 +172,7 @@ def list_methods():
     i = 7
     newvalue = 77
     lst.insert(i, newvalue)
-    logger.info(f'Adding value 77 to position 7 gives {lst}')
+    logger.info(f'Inserting value 77 to position 7 gives {lst}')
 
     # remove an number 5
     item_to_remove = 5
