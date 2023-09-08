@@ -271,7 +271,7 @@ def illustrate_list_methods():
 def illustrate_list_transformations():
     """This function illustrates transformations that can be applied to a list"""
 
-    logger.info("Score list: {score_list}")
+    logger.info(f"Score list: {score_list}")
 
     # TRANFORMATIONS ............................
 
@@ -311,7 +311,7 @@ def illustrate_list_transformations():
 def illustrate_list_comprehensions():
     """This function illustrates list comprehensions"""
 
-    logger.info("Score list: {score_list}")
+    logger.info(f"Score list: {score_list}")
 
     # TRANFORMATIONS - Using List Comprehensions
     # List comprehensions are a concise way to create lists
@@ -325,18 +325,18 @@ def illustrate_list_comprehensions():
     # Cast the result to a list using square brackets
 
     scores_over_100 = [x for x in score_list if x > 100]
-    logger.info("Scores over 100 (using list comprehensions!): {scores_over_100}")
+    logger.info(f"Scores over 100 (using list comprehensions!): {scores_over_100}")
 
     # Try again "keep x (for each x in score_list) IF  x < 42"
     scores_under_42 = [x for x in score_list if x < 42]
-    logger.info("Scores under 42 (using list comprehensions!): {scores_under_42}")
+    logger.info(f"Scores under 42 (using list comprehensions!): {scores_under_42}")
 
     # Map each element to its square
     # Say "give me x squared (for each x in score_list)"
     # Cast the result to a list using square brackets
 
     doubled_scores = [x * 2 for x in score_list]
-    logger.info("Doubled scores (using list comprehensions!): {doubled_scores}")
+    logger.info(f"Doubled scores (using list comprehensions!): {doubled_scores}")
 
     # Map each element to its square root
     # Say "give me the square root of x (for each x in score_list)"

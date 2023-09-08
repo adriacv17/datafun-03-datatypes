@@ -210,6 +210,62 @@ def list_methods():
         f"Popped the last (index=-1): {last} and now, new_lst is: {new_lst}"
     )
 
+def lab_list_transformations():
+    """This function illustrates transformations that can be applied to a list"""
+
+    logger.info(f"Hemoglobin list: {hemoglobin_values}")
+
+    # TRANFORMATIONS ............................
+
+    # FILTER and MAP are critical tranformations in big data applications
+
+    #Filter results for less than 7 meaning it is a critical result.
+    results_less_than_7 = list(filter(lambda x: x < 7, hemoglobin_values))
+    logger.info(f"Critical Hemoglobin Results: {results_less_than_7}")
+
+
+    # Map each each x to cuberoot of x (hint: use math module)
+    # cast the result to a list using square brackets
+    cbrt_list = list(map(lambda x: x**(1/3) , hemoglobin_values))
+    logger.info(f"Cube root list: {cbrt_list}") 
+
+
+    # Use the built in map() function to calculate the volume of a cube with 
+    # a side equal to the value in your list. Hint: Volume = side * side * side
+    volume_list = list(map(lambda x: x ** 3 , hemoglobin_values))
+    logger.info(f"Volume of a cube with each side: {volume_list}")
+
+
+def lab_list_comprehensions():
+    """This function illustrates list comprehensions"""
+
+    logger.info(f"Hemoglobin values: {hemoglobin_values}")   
+
+    # Use a list comprehension to filter (start within square brackets) to 
+    # get x (for each x in list1) if x is less than 4 or some other cutoff.
+
+    Hgb_values2 = [x for x in hemoglobin_values if x < 7]
+    logger.info(f"List comprehension critical values less than 7: {Hgb_values2}")
+
+    # Use a list comprehension to triple each value in your list1, 
+    # that is to get x*3 (for x in list1) 
+
+    Trp_values = [x * 3 for x in hemoglobin_values]
+    logger.info(f'Hemoglobin values tripled: {Trp_values}')
+
+    # Use a list comprehension to transform your numeric list 
+    # into another numeric list using a transformation of your choice.
+
+    ###male version
+    normal_range_hemoglobin_male = [x for x in hemoglobin_values if  x <= 17 and x >= 14]
+    logger.info(f"Results in normal adult male range hemoglobin: {normal_range_hemoglobin_male}")
+
+    ###female version
+    normal_range_hemoglobin_female = [x for x in hemoglobin_values if  x <= 15 and x >= 12]
+    logger.info(f"Results in normal adult female range hemoglobin: {normal_range_hemoglobin_female}")
+
+
+
 
 
 def show_log():
@@ -234,7 +290,8 @@ if __name__ == "__main__":
     lab_correlation_and_prediction()
     lab_built_in_functions()
     list_methods()
-    
+    lab_list_transformations()
+    lab_list_comprehensions()
     
     show_log()
 
