@@ -26,16 +26,17 @@ def compare_two_plays():
         
     # read from file and get a list of words
 
-    with open("text_hamlet.txt", "r") as f1:
+    with open("IntroToPython-master/datafun-03-datatypes/text_hamlet.txt", "r") as f1:
         text = f1.read()
         wordlist1 = text.split()  # split on whitespace
 
     logger.info(f"List of words from play 1: {wordlist1}")
 
 
+
     # read from file and get a list of words
 
-    with open("text_juliuscaesar.txt", "r") as f2:
+    with open("IntroToPython-master/datafun-03-datatypes/text_juliuscaesar.txt", "r") as f2:
         text = f2.read()
         wordlist2 = text.split()  # split on whitespace
 
@@ -48,12 +49,14 @@ def compare_two_plays():
     # hint: use sorted() to sort the list
     # hint: use set() to remove duplicates
     # name them wordset1 and wordset2
-    wordset1 = set()  # TODO fix this line
-    wordset2 = set()  # TODO fix this line
+
+    
+    wordset1 = set(sorted(wordlist1))  
+    wordset2 = set(sorted(wordlist2))  
 
 
     # initialize a variable maxlen = 10
-    maxlen = 1  # TODO fix this line
+    maxlen = 10 
 
     # use a list comprension to get a list of words longer than 10
     # for word in wordset1
@@ -65,8 +68,11 @@ def compare_two_plays():
     # hint: use set()
     # name them longwordset1 and longwordset2
 
-    longwordset1 = set()  # TODO: fix this line
-    longwordset2 = set()  # TODO: fix this line
+    longwordset1 = [item for item in wordset1 if len(item) > maxlen]
+    longwordset2 = [item for item in wordset2 if len(item) > maxlen]
+
+    longwordset1 = set(longwordset1)
+    longwordset2 = set(longwordset2)  
 
     # find the intersection of the two sets
     # that is, the words in both longwordset1 1 & longwordset2
@@ -74,17 +80,21 @@ def compare_two_plays():
     longwords = longwordset1 & longwordset2
 
     # print the length of the sets and the list
-    print(len(longwordset1))
-    print(len(longwordset2))
-    print(len(longwords))
-    print()
-    print(f"{sorted(longwords) = }")
-    print()
+    # Start using this f-string "syntactic sugar" for quick ouptut
+    # just add space = space inside the curly braces
+    # it will print the name of the variable and the value
+
+    logger.info(f"{len(longwordset1) = }")
+    logger.info(f"{len(longwordset2) = }")
+    logger.info(f"{len(longwords) = }")
+    logger.info("")
+    logger.info(f"{sorted(longwords)}")
+
 
     # check your work
-    print("TESTING...if nothing prints before the testing is done, you passed!")
+    logger.info("TESTING...if nothing prints before the testing is done, you passed!")
     doctest.testmod()
-    print("TESTING DONE")
+    logger.info("TESTING DONE")
 
 def show_log():
     """Read log file and print it to the terminal"""
@@ -99,7 +109,6 @@ if __name__ == "__main__":
     logger.info("Calling functions from main block")
 
     compare_two_plays()
-
     logger.info("Complete the code to compare two plays.")
     show_log()
 
