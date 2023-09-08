@@ -4,6 +4,7 @@ Purpose: Illustrate string lists
 
 import random
 
+import textwrap
 from util_datafun_logger import setup_logger
 
 # Set up logging .............................................

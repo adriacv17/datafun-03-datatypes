@@ -1,0 +1,2 @@
+The lab is a dungeon of sorts in a hospital.
+It does all of the hospital specimen testing.
