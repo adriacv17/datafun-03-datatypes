@@ -46,7 +46,7 @@ def process_text_woodchuck():
     logger.info("Calling process_text_woodchuck()")
 
     # read in woodchuck to get a list of words
-    with open("text_woodchuck.txt", "r") as fileObject:
+    with open("IntroToPython-master/datafun-03-datatypes/text_woodchuck.txt", "r") as fileObject:
         text = fileObject.read()
         list_words = text.split()  # split on whitespace
         unique_words = set(list_words)  # remove duplicates by making a set
