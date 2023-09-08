@@ -1,5 +1,7 @@
 """
-Modify this docstring.
+Project 3 Numeric Lists
+Adrian Vega
+09/08/2013
 
 """
 

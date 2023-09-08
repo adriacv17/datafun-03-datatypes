@@ -1,8 +1,8 @@
 
 """
-Purpose: Illustrate tuples, sets, and dictionaries in Python.
-
-Here are some examples for tuples, sets, and dictionaries.
+Project 3 Tuples and Dictionaries
+Adrian Vega
+09/08/2023
 
 """
 
@@ -10,6 +10,7 @@ Here are some examples for tuples, sets, and dictionaries.
 from util_datafun_logger import setup_logger
 
 # Call the setup_logger function to create a logger and get the log file name
+
 logger, logname = setup_logger(__file__)
 
 def lab_tuples():
@@ -26,6 +27,9 @@ def lab_tuples():
     duplicate_tuple = tuple_labdept * 2
 
     logger.info(f"duplicate the tuple: {duplicate_tuple}")
+
+
+
 
     # Create two sets
 
@@ -49,7 +53,9 @@ def lab_sets():
     lab_set_diff = lab_tempsA & lab_tempsB
     logger.info(f"difference of two sets: {lab_set_diff}")
 
-#make to lists with key:value pairs and count from file
+#make a dictionary with key:value pairs and count from file
+
+
 def lab_dictionaries():
     PatientA_dict = {"test": "hemoglobin", "result": 6, "status": "critical"}
     PatientB_dict = {"test": "hemoglobin", "result": 14, "status": "normal"}
@@ -58,6 +64,9 @@ def lab_dictionaries():
     logger.info(f"PatientB_dict = {PatientB_dict}")
     
     logger.info("") #spacing for asthetics
+
+
+
 
     #word cound in key value pairs
     with open("IntroToPython-master/datafun-03-datatypes/text_woodchuck.txt") as file_object:
@@ -74,15 +83,23 @@ def lab_dictionaries():
     logger.info(f"Given text_simple.txt, the word_counts_dict = {word_counts_dict}")
     
 
+
+
+
+
+
     #dictionary comprehension
     word_counts_dict2 = {word: word_list.count(word) for word in word_list}
 
     # Spend most of your practice on comprehensions - they are
     # key to transforming data in Python.
-    
+
     logger.info("") #spacing for asthetics
     logger.info("-------------------dictionary comprehension--------------------------------")
     logger.info(f"word comprehension result = {word_counts_dict2}")
+
+
+
 
 def show_log():
     """Read log file and print it to the terminal"""
